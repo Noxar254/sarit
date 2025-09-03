@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Recruitment Drive Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>Recruitment Drive</h1>
+        <p>SARIT Center</p>
+        <span class="date">September 28-29, 2025</span>
+    <a href="learn-more.html" class="hero-btn" aria-label="Open learn more page about the recruitment drive">Learn more</a>
+    </div>
+    <div class="container" id="registration">
+        <form id="registrationForm" onsubmit="return validateForm(event)">
+            <h2>Registration Form</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="qualification">Highest Qualification</label>
+                <select id="qualification" name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">Ph.D.</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="expertise">Area of Expertise</label>
+                <select id="expertise" name="expertise" onchange="toggleOtherExpertise()" required>
+                    <option value="">Select Area of Expertise</option>
+                    <option value="health">Healthcare</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="it">Information Technology</option>
+                    <option value="general">General Workers</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
+            <div class="form-group" id="otherExpertiseGroup" style="display: none;">
+                <label for="otherExpertise">Specify Your Area of Expertise</label>
+                <input type="text" id="otherExpertise" name="otherExpertise" placeholder="Enter your area of expertise">
+            </div>
+            <div class="form-group">
+                <label for="experience">Years of Experience</label>
+                <input type="number" id="experience" name="experience" min="0" required>
+            </div>
+            <div class="form-group file-upload">
+                <label for="cv">Upload Your CV (optional)</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                <div class="file-info">Supported formats: PDF, DOC, DOCX (Max 5MB) — you may also email your CV after registering</div>
+            </div>
+            <div class="payment-section">
+                <div class="payment-header">Registration Fee: KES 500</div>
+                <div class="payment-details">
+                    <div class="payment-method">M-PESA Till Number:</div>
+                    <div class="till-number">7636095</div>
+                </div>
+                <div class="payment-note">Please complete the payment before submitting the form</div>
+            </div>
+            <div class="form-group">
+                <label for="transactionId">M-PESA Transaction ID <span class="required">*</span></label>
+                <input type="text" id="transactionId" name="transactionId" placeholder="Enter M-PESA Transaction ID" required>
+            </div>
+            <div class="mandatory-note">* Indicates mandatory fields</div>
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
